@@ -29,11 +29,15 @@ DICTIONARY = importDictionary(dictionary_path)
 
 # find list of words
 # first letter in list must be in the word
-
+'''
 def canSpell(word, letters):
     wordCount = Counter(word)
     letterCount = Counter(letters)
     return all(wordCount[c] <= letterCount.get(c, 0) for c in wordCount)
+'''
+
+def canSpell(word, letters):
+    return all(c in letters for c in word)
 
 def findWordList(letters, dictionary_path="wordlist.txt"):
     words = importDictionary(dictionary_path)
