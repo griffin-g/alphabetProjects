@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: flask-api
+    env: python
+    buildCommand: ""
+    startCommand: python pyWordFinder.py
+    envVars:
+      - key: FLASK_ENV
+        value: production
+    plan: free
