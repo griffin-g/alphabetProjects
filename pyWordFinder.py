@@ -42,7 +42,7 @@ def canSpell(word, letters):
 def findWordList(letters, dictionary_path="wordlist.txt"):
     words = importDictionary(dictionary_path)
     first = letters[0]
-    return [word for word in words if canSpell(word, letters) and first in word]
+    return [word for word in words if canSpell(word, letters) and first in word and len(word) > 1]
 
 # generate random letters
 # first letter in list is "must use" letter
