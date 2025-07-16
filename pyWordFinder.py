@@ -29,6 +29,8 @@ def randomLetters(length):
     return letters
 
 # find list of words
+# first letter in list must be in the word
+
 def canSpell(word, letters):
     wordCount = Counter(word)
     letterCount = Counter(letters)
@@ -36,7 +38,8 @@ def canSpell(word, letters):
 
 def findWordList(letters, dictionary_path="wordlist.txt"):
     words = importDictionary(dictionary_path)
-    return [word for word in words if canSpell(word, letters)]
+    first = letters[0]
+    return [word for word in words if canSpell(word, letters) and first in word]
 
 def main():
     letters = randomLetters(7)
